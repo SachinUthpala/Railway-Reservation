@@ -1,0 +1,26 @@
+package Updateusers;
+
+public class Update_Users extends DbConnection {
+	
+	int id;
+	String name;
+	String password;
+	String email;
+	String phone;
+	
+	public Update_Users(int i,String name,String pass,String email,String phone) {
+		this.id = i;
+		this.name = name;
+		this.password = pass;
+		this.email = email;
+		this.phone = phone;
+	}
+	
+	public int Update() {
+		
+		Update_Users ups = new Update_Users(id, name, password, email, phone);
+		String sql ="UPDATE ";
+		
+		return 0;
+	}
+}

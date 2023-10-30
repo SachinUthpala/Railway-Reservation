@@ -1,0 +1,61 @@
+package Railway.registration;
+
+import java.util.*;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.mysql.cj.Session;
+import com.mysql.cj.protocol.Resultset;
+import com.mysql.cj.xdevapi.Result;
+
+/**
+ * Servlet implementation class Login
+ */
+@WebServlet("/Login")
+public class Login extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
+		
+		String uname = request.getParameter("name");
+		String password = request.getParameter("password");
+		Connection con = null;
+		RequestDispatcher disacture = null;
+		
+		try {
+			
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Railway","root","Sachin-123");
+			PreparedStatement pst_l = con.prepareStatement("select * from users where uname = ? and upassword = ?");
+			
+			pst_l.setString(1, uname);
+			pst_l.setString(2, password);
+			
+			ResultSet rs = pst_l.executeQuery();
+			
+			if(rs.next()) {
+				
+				disacture = request.getRequestDispatcher("../index.jsp");
+			}else {
+				disacture = request.getRequestDispatcher("SignUp/login.jsp");
+			}
+			
+			disacture.forward(request,response);
+			
+		} catch (Exception e) {
+			
+		}
+	}
+
+}

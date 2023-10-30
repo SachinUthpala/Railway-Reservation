@@ -1,0 +1,24 @@
+package Updateusers;
+
+public class DeleteUser extends DbConnection {
+	int uid;
+
+	public int getUid() {
+		return uid;
+	}
+
+	public void setUid(int uid) {
+		this.uid = uid;
+	}
+	
+	public int deleteData() {
+		
+		DeleteUser delUse = new DeleteUser(uid);
+		
+		
+		
+		return 0;
+		
+		
+	}
+}

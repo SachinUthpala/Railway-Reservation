@@ -1,0 +1,39 @@
+package UpdateTrains;
+
+import java.sql.PreparedStatement;
+
+public class Update_train_class extends DbConnection {
+	int Id;
+	String name;
+	String from;
+	String to;
+	String price;
+	
+	public Update_train_class(int i,String name,String from,String to,String price) {
+		this.Id = i;
+		this.name = name;
+		this.from = from;
+		this.to = to;
+		this.price = price;
+	}
+	
+	public int InsertData() {
+		
+		Update_train_class utc = new Update_train_class(Id, name, from, to, price);
+		
+		String sql = "UPDATE trains set tname = ?, t_from=? , t_to =? , price = ? where tid = ?";
+		
+		PreparedStatement pst;
+		
+		pst = utc.getConnection().prepareStatement(sql);
+		
+		pst.setString(1, sql);
+		pst.setString(2, sql);
+		pst.setString(3, sql);
+		pst.setString(4, sql);
+		pst.setInt(5, Id);
+		
+		return 0;
+		
+	}
+}

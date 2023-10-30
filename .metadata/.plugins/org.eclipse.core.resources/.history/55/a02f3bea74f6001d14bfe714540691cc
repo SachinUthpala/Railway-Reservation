@@ -1,0 +1,11 @@
+package UpdateAdmin;
+
+public class Current_users {
+	
+	int udi;
+	String uname;
+	String upassword;
+	String uemail;
+	String uPnum;
+	
+}

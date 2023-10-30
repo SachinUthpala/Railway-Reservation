@@ -1,0 +1,13 @@
+package UpdateTrains;
+
+public class Delete_data {
+	int uid;
+	
+	public Delete_data(int id) {
+		this.uid = id;
+	}
+	
+	public int deleteData() {
+		
+	}
+}

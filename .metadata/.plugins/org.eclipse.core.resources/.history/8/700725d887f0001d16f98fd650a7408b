@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Trains</title>
+    <link rel="stylesheet" href="../Style/boostrap.min.css">
+</head>
+<body>
+    <h1><center>Add A train</center></h1>
+    <br>
+    <form method="post" action="../../InsertTrainServlet">
+        <div >
+          <label for="exampleInputEmail1">Train name</label>
+          <input type="text" class="form-control" >
+        </div>
+        <div class="form-group">
+          <label >Train Starts From</label>
+          <input type="text" class="form-control" >
+        </div>
+        <div class="form-group">
+            <label >Train Ens From</label>
+            <input type="text" class="form-control" >
+          </div>
+          <div class="form-group">
+            <label>Ticket Price</label>
+            <input type="text" class="form-control" >
+          </div> 
+          <br>
+        <button type="submit" class="btn btn-primary">ADD A TRAIN</button>
+      </form>
+      <br><br>
+      <h1><center>Delete A train</center></h1>
+    <br>
+    <form method = "post">
+        <div >
+          <label for="exampleInputEmail1">Train name</label>
+          <input type="text" class="form-control" placeholder="Enter Train Name">
+        </div> <br>
+        <button type="submit" class="btn btn-primary">Delete A TRAIN</button>
+      </form>
+</body>
+</html>

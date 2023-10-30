@@ -1,0 +1,7 @@
+package UpdateTrains;
+
+public class Delete_data {
+	public Delete_data() {
+		
+	}
+}

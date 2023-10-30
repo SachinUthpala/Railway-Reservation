@@ -1,0 +1,11 @@
+package UpdateAdmin;
+
+public class Update_admin_data_class {
+	int id;
+	String name;
+	String password;
+	
+	public Update_admin_data_class() {
+		// TODO Auto-generated constructor stub
+	}
+}

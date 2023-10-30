@@ -1,0 +1,48 @@
+package Reservation;
+
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import com.mysql.cj.protocol.Resultset;
+
+public class Train_dao {
+	public ArrayList<Trains> selectAll(){
+		
+		DbConnection dbc = new DbConnection();
+		
+		ArrayList<Trains> trainAll = new ArrayList<>();
+		
+		String query = "Select * from trins";
+		
+		try {
+			PreparedStatement smtp ;
+			smtp = dbc.getConnection().prepareStatement(query);
+			
+			ResultSet res = smtp.executeQuery();
+			
+			while(res.next()) {
+				
+				Trains tr = new Trains();
+				
+				Trains trins = new Trains();
+				trins.setTname(res.getString(2));
+				trins.setT_from(res.getString(3));
+				trins.setT_to(res.getString(4));
+				trins.setPrice(res.getString(5));
+				
+				trainAll.add(tr);
+			}
+			
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return trainAll;
+		
+	}
+}

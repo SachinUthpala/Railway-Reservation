@@ -1,0 +1,5 @@
+package Reservation;
+
+public class Del_reservation extends DbConnection {
+
+}

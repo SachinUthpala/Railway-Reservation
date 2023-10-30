@@ -1,0 +1,48 @@
+package Updateusers;
+
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+public class Update_Users extends DbConnection {
+	
+	int id;
+	String name;
+	String password;
+	String email;
+	String phone;
+	
+	public Update_Users(int i,String name,String pass,String email,String phone) {
+		this.id = i;
+		this.name = name;
+		this.password = pass;
+		this.email = email;
+		this.phone = phone;
+	}
+	
+	public int Update() {
+		
+		try {
+			Update_Users ups = new Update_Users(id, name, password, email, phone);
+			String sql ="UPDATE users SET uname=?,upassword=?,uemail=?,uPnum = ? where uid=?";
+			
+			PreparedStatement pst;
+			
+			pst = ups.getConnection().prepareStatement(sql);
+			
+			pst.setString(1, name);
+			pst.setString(2, password);
+			pst.setString(3, email);
+			pst.setString(4, phone);
+			pst.setInt(5, id);
+			
+			int j = pst.executeUpdate();
+			
+			return j;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return j;
+	}
+}

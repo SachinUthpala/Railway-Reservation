@@ -1,0 +1,17 @@
+package UpdateTrains;
+
+public class Update_train_class extends DbConnection {
+	int Id;
+	String name;
+	String from;
+	String to;
+	String price;
+	
+	public Update_train_class(int i,String name,String from,String to,String price) {
+		this.Id = i;
+		this.name = name;
+		this.from = from;
+		this.to = to;
+		this.price = price;
+	}
+}

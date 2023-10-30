@@ -1,0 +1,47 @@
+package Reservation;
+
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Currency;
+
+import UpdateAdmin.Current_users;
+
+public class Curr_res_dao {
+	public ArrayList<My_current_res> selectAll() {
+		
+		DbConnection new_con = new DbConnection();
+		
+		String sql = "select * from user_reservation";
+		
+		try {
+			PreparedStatement stmt;
+			stmt = new_con.getConnection().prepareStatement(sql);
+			ResultSet res = stmt.executeQuery();
+			
+			while(res.next()) {
+				
+				My_current_res emp = new My_current_res();
+				
+				emp.setRid(1);
+				emp.setRname(2);
+				emp.setRemail(3);
+				emp.setRphone(4);
+				
+				
+				
+				
+				
+			
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+	}
+}

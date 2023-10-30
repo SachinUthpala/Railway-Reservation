@@ -1,0 +1,8 @@
+package Updateusers;
+
+public class InserUser extends DbConnection {
+	String name;
+	String emil;
+	String password;
+	String Phone;
+}

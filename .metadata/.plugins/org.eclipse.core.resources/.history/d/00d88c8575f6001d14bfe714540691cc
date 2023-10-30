@@ -1,0 +1,16 @@
+package UpdateAdmin;
+
+import java.util.ArrayList;
+
+public class Current_dao {
+
+	
+	public ArrayList<Current_users> selectAll(){
+		DbConnection dbc = new DbConnection();
+		
+		ArrayList<Current_users> userAll = new ArrayList<>();
+		
+	}
+	
+	
+}

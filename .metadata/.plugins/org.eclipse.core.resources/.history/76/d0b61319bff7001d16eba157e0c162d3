@@ -1,0 +1,5 @@
+package UpdateAdmin;
+
+public class Del_Admin extends DbConnection {
+
+}

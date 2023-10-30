@@ -1,0 +1,39 @@
+package Updateusers;
+
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+public class DeleteUser extends DbConnection {
+	int uid;
+
+	public int getUid() {
+		return uid;
+	}
+
+	public void setUid(int uid) {
+		this.uid = uid;
+	}
+	
+	public int deleteData() {
+		
+		DeleteUser delUse = new DeleteUser(uid);
+		
+		String query = "delete from trains where tid = ? ";
+		PreparedStatement psd;
+		
+		try {
+			psd= delUse.getConnection().prepareStatement(query);
+			psd.setInt(1, uid);
+			psd.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+		return 0;
+		
+		
+	}
+}

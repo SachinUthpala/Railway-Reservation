@@ -1,0 +1,25 @@
+package UpdateTrains;
+
+import java.sql.PreparedStatement;
+
+public class Delete_data extends DbConnection {
+	int uid;
+	
+	public Delete_data(int id) {
+		this.uid = id;
+	}
+	
+	public int deleteData() {
+		
+		Delete_data d_data = new Delete_data(uid);
+		
+		String query = "delete from trains where tid = ? ";
+		
+		PreparedStatement psd;
+		
+		psd= d_data.getConnection().prepareStatement(query);
+		psd.setInt(uid, 1);
+		
+		return 0;
+	}
+}

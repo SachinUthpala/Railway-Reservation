@@ -1,0 +1,18 @@
+package UpdateTrains;
+
+public class Delete_data extends DbConnection {
+	int uid;
+	
+	public Delete_data(int id) {
+		this.uid = id;
+	}
+	
+	public int deleteData() {
+		
+		Delete_data d_data = new Delete_data(uid);
+		
+		String query = "delete from trains where tid = ? ";
+		
+		return 0;
+	}
+}

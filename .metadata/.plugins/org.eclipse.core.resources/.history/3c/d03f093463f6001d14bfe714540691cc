@@ -1,0 +1,9 @@
+package Reservation;
+
+public class Trains {
+	
+	String tname;
+	String t_from; 
+	String t_to;
+	String price;
+}

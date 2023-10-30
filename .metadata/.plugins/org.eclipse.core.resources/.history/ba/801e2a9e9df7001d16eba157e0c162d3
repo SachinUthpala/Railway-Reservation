@@ -1,0 +1,12 @@
+package Reservation;
+
+import java.util.ArrayList;
+
+public class Curr_res_dao {
+	public ArrayList<CurrentRes> selectAll() {
+		
+		DbConnection new_con = new DbConnection();
+		
+		
+	}
+}

@@ -1,0 +1,8 @@
+import Updateusers.DbConnection;
+
+public class InserUser extends DbConnection {
+	String name;
+	String password;
+	String email;
+	String phone; 
+}

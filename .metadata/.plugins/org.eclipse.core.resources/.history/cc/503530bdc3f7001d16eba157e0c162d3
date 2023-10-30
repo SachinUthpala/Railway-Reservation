@@ -1,0 +1,32 @@
+package Reservation;
+
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import UpdateTrains.Delete_data;
+
+public class Del_reservation extends DbConnection {
+	int id;
+	
+public int deleteData() {
+		
+		System.out.print("Value --" + id);
+		
+		Del_reservation d_data = new Del_reservation(id);
+		
+		String query = "delete from trains where tid = ? ";
+		
+		PreparedStatement psd;
+		
+		try {
+			psd= d_data.getConnection().prepareStatement(query);
+			psd.setInt(1, uid);
+			psd.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return 0;
+	
+}

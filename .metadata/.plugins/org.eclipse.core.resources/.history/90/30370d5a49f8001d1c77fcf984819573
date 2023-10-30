@@ -1,0 +1,22 @@
+package UpdateAdmin;
+
+public class Update_admin_data_class {
+	int id;
+	String name;
+	String password;
+	
+	public Update_admin_data_class(int i , String name, String pass) {
+		this.id = i;
+		this.name = name;
+		this.password = password;
+	}
+	
+	public int UpdateAdminData() {
+		Update_admin_data_class uad = new Update_admin_data_class(id, name, password);
+		
+		String sql = "update ";
+		
+		
+		return 0;
+	}
+}

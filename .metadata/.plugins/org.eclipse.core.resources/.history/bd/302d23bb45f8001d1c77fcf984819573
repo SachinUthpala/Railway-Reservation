@@ -1,0 +1,20 @@
+package Reservation;
+
+public class Update_res_class extends DbConnection{
+	int id;
+	String name;
+	String from ;
+	String to;
+	String phone;
+	String mail;
+	
+	public Update_res_class(int i, String name,String from,String to, String phone ,String mail) {
+		this.id = i;
+		this.name= name;
+		this.from = from;
+		this.to = to;
+		this.phone = phone;
+		this.mail = mail;
+		
+	}
+}

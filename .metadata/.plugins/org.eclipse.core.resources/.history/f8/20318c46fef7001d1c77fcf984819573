@@ -1,0 +1,12 @@
+package Updateusers;
+
+public class Update_Users extends DbConnection {
+	
+	int id;
+	String name;
+	String password;
+	String email;
+	String phone;
+	
+	
+}

@@ -1,0 +1,7 @@
+
+public class InserUser {
+	String name;
+	String password;
+	String email;
+	String phone;
+}

@@ -1,0 +1,40 @@
+package Updateusers;
+
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+public class DeleteUser extends DbConnection {
+	int uid;
+
+	public int getparameter(int id) {
+		uid = id;
+		return uid;
+	}
+	
+	
+	public int deleteData() {
+		
+		DeleteUser delUse = new DeleteUser(uid);
+		
+		System.out.print("User Id in DELETE : "+ uid);
+
+		
+		String query = "delete from users where uid = ? ";
+		PreparedStatement psd;
+		
+		try {
+			psd= delUse.getConnection().prepareStatement(query);
+			psd.setInt(1, uid);
+			psd.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+		return 0;
+		
+		
+	}
+}

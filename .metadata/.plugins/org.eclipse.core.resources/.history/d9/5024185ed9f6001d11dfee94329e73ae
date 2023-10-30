@@ -1,0 +1,34 @@
+package UpdateTrains;
+
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+public class Delete_data extends DbConnection {
+	int uid;
+	
+	public Delete_data(int id) {
+		this.uid = id;
+	}
+	
+	System.out.print(uid);
+	
+	public int deleteData() {
+		
+		Delete_data d_data = new Delete_data(uid);
+		
+		String query = "delete from trains where tid = ? ";
+		
+		PreparedStatement psd;
+		
+		try {
+			psd= d_data.getConnection().prepareStatement(query);
+			psd.setInt(uid, 1);
+			psd.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return 0;
+	}
+}

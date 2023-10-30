@@ -1,0 +1,43 @@
+package UpdateAdmin;
+
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import com.mysql.cj.protocol.Resultset;
+
+public class Current_dao {
+
+	
+	public ArrayList<Current_users> selectAll(){
+		DbConnection dbc = new DbConnection();
+		
+		ArrayList<Current_users> userAll = new ArrayList<>();
+		
+		String sql = "select * from users";
+		
+		try {
+			PreparedStatement smtp;
+			
+			smtp = dbc.getConnection().prepareStatement(sql);
+			
+			Resultset res = smtp.executeQuery();
+			
+			while( res.next()) {
+				Current_users cuser = new Current_users();
+				
+				cuser.setUdi(cuser.getInt(1));
+				cuser
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	
+	}
+	
+	
+}
